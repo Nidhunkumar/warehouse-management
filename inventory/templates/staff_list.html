@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% load static %} {% block content %} 
+{% if user.is_authenticated and user.is_superuser %}
+<div class="row">
+  <div class="col-12 grid-margin">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">STAFF-DETAILS</h4>
+
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="fw-bold text-uppercase">
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Date-of-join</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for data in staffs %}
+              <tr>
+                <td>
+                  <img src="{{ data.profile.image.url }}" alt="image" />
+                  <span class="pl-2 fw-bold h4 text-uppercase"
+                    >{{ data.username }}</span
+                  >
+                </td>
+                <td>{{data.email}}</td>
+                <td>{{data.profile.phone}}</td>
+                <td>{{data.profile.address}}</td>
+                <td>{{data.date_joined}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% else %} {% include 'userindex.html' %} {% endif %} {% endblock %}

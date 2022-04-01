@@ -1,0 +1,23 @@
+{% extends 'userbase.html' %}
+{% block title %}Register{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="container  text-white fw-bold  " >
+      <div class="row">
+          <div class="col-md-6 mx-auto mt-2" style="box-shadow: 0px 0px 5px rgb(129, 118, 118); " >
+            <p class="text-center h5 fw-bold mt-2">SIGN-UP</p>
+            <hr class="bg-warning">
+            <form method="POST"  class="mx-1 mx-md-4">
+              {% csrf_token %}
+              {{form|crispy}}
+              <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                <input type="submit" value="SIGN-UP" class="btn btn-outline-warning w-50"/>
+              </div>
+              <P>Already have an account &nbsp;<a href="{% url 'user-login' %}">Log-in</a></P>
+            </form>    
+        </div> 
+          </div>
+        </div>
+      </div>
+  {% endblock %}

@@ -1,0 +1,75 @@
+{% extends 'base.html' %} {% block title %}Product-list{% endblock %} 
+{% load crispy_forms_tags %} {% block content %}
+<div class="container-fluid">
+  {% for mez in messages %} {% if mez.tags == 'success' %}
+  <div
+    class="alert alert-success alert-dismissible fw-bold text-uppercase text-center fade show mx-4 mt-3"
+    role="alert"
+  >
+    <strong>{{ mez.message }}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {% endif %} {% endfor %}
+
+  <div class="row">
+    <div
+      class="col-md-3 mx-auto px-2 h-50 mb-5"
+      style="box-shadow: 0px 0px 5px rgb(129, 118, 118)"
+    >
+      <p class="text-center h5 fw-bold mx-1 mx-4 mt-4">ADD-PRODUCT</p>
+      <hr class="bg-warning" />
+      <form method="POST" class="mx-1 mx-md-4">
+        {% csrf_token %} {{form|crispy}}
+
+        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+          <input
+            type="submit"
+            value="ADD"
+            class="btn btn-outline-warning w-100"
+          />
+        </div>
+      </form>
+    </div>
+
+    <div
+      class="col-md-8 mx-auto mb-5"
+      style="box-shadow: 0px 0px 5px rgb(190, 130, 130)"
+    >
+      <table class="table table-responsive-md text-warning text-uppercase">
+        <thead>
+          <tr>
+            <th>Product-Name</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in products %}
+          <tr>
+            <td>{{ i.name }}</td>
+            <td class="text-uppercase">{{ i.category }}</td>
+            <td>{{ i.quantity }}</td>
+            <td colspan="1">
+              <a class="btn-sm btn-info" href="{% url 'product_update' i.id %}">
+                <i class="mdi mdi-pencil"></i
+              ></a>
+              <a
+                id="product-delete"
+                class="btn-sm btn-danger"
+                href="{% url 'product_delete' i.id %}"
+              >
+                <i class="mdi mdi-delete"></i
+              ></a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block title %}Product-update{% endblock %} 
+{% load crispy_forms_tags %} {% block content %}
+<div class="container-fluid">
+  <div class="row">
+    <div
+      class="col-md-6 mx-auto px-2 h-50 mb-5"
+      style="box-shadow: 0px 0px 5px rgb(129, 118, 118)"
+    >
+      <p class="text-center h5 fw-bold mx-1 mx-4 mt-4">UPDATE-PRODUCT</p>
+      <hr class="bg-warning" />
+      <form method="POST" class="mx-1 mx-md-4">
+        {% csrf_token %} {{form|crispy}}
+
+        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+          <input
+            type="submit"
+            value="UPDATE"
+            class="btn btn-outline-warning w-100"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

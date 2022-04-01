@@ -1,0 +1,43 @@
+{% extends 'base.html' %} {% block title %}Order-List{% endblock %} {% load
+static %} {% block content %}
+ {% if user.is_authenticated and user.is_superuser %}
+<div class="row">
+  <div class="col-12 grid-margin">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">ORDER-DETAILS</h4>
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="fw-bold text-uppercase">
+              <tr>
+                <th>Order-by</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Category</th>
+                <th>Date-of-Order</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for data in orders %}
+              <tr>
+                <td>{{data.staff.username}}</td>
+                <td>{{data.product.name}}</td>
+                <td>{{data.order_quantity}}</td>
+                <td>{{data.product.category}}</td>
+                <td>{{data.order_date}}</td>
+                <!-- <td>
+                  <div class="badge badge-outline-success">Approved</div>
+                </td> -->
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% else %} 
+{% include 'userindex.html' %} 
+{% endif %} 
+{% endblock %}
