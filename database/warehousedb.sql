@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 02, 2022 at 05:12 PM
+-- Generation Time: Apr 05, 2022 at 08:08 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -124,8 +124,8 @@ CREATE TABLE `auth_user` (
 --
 
 INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
-(2, 'pbkdf2_sha256$320000$jtsh9rXw7AKfA7ITAAo7So$XIFITAeFCToNwIoMb+hkyG5yp1eBbuu9LQdt5hKeXqA=', '2022-03-28 06:05:03.270482', 1, 'admin1', '', '', 'admin@gmail.com', 1, 1, '2022-03-24 07:35:15.563320'),
-(3, 'pbkdf2_sha256$320000$FmUHU5sfNrh1LheiIg4w0T$FOOUdXOTk+/Uywx6STgD2qwA/2io6W7V4RbhxAjc6XE=', '2022-03-28 06:10:48.557780', 0, 'john', '', '', 'areeshtvr@gmail.com', 0, 1, '2022-03-24 10:58:25.739167'),
+(2, 'pbkdf2_sha256$320000$jtsh9rXw7AKfA7ITAAo7So$XIFITAeFCToNwIoMb+hkyG5yp1eBbuu9LQdt5hKeXqA=', '2022-04-05 05:52:22.584044', 1, 'admin1', '', '', 'admin@gmail.com', 1, 1, '2022-03-24 07:35:15.563320'),
+(3, 'pbkdf2_sha256$320000$UGtXhhHaqiNHhx3kA8ukYF$Dhaif5r6gcvnDr/tNXVLG9DT2YNsTTZUBbAi60lkPvo=', '2022-04-05 06:08:23.019829', 0, 'john', '', '', 'areeshtvr@gmail.com', 0, 1, '2022-03-24 10:58:25.739167'),
 (4, 'pbkdf2_sha256$320000$t1qfPJpoS7bdpfmXPCTzCo$4x7y9jD0FakR+sfVAJBf7yy03kU3VrRI2coaXnloCQ0=', '2022-03-28 04:28:37.280462', 0, 'sam', '', '', 'bestdcsolutions@gmail.com', 0, 1, '2022-03-25 14:43:25.126975'),
 (5, 'pbkdf2_sha256$320000$eKpCFagVND1LH6RHalJbfc$Ja9jzvasN2KBipVeSqr96OhgW8ZFe5urfdTylq04Guw=', '2022-03-28 04:29:58.282695', 0, 'johnh', '', '', 'areestvr@gmail.com', 0, 1, '2022-03-25 14:46:43.087262'),
 (6, 'pbkdf2_sha256$320000$m7qxyv6ZlsuZUdWqRuSct3$1NMHohu9HMGw+AiNsBPb0xfCUrXZ7No/pHMFWYpe+Ts=', '2022-03-28 06:02:44.981600', 0, 'Ram', '', '', 'areeshtvr@gmail.com', 0, 1, '2022-03-28 06:02:28.481763');
@@ -274,6 +274,7 @@ INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALU
 ('9jvxm8szffbpmnl3yyq869mqv7mj3b30', 'e30:1nXL68:to8svQxOLNX6hQF2e0TjKpwapdRPmRazx3m7d7plbk4', '2022-04-07 10:53:44.138727'),
 ('h9c0epnva4nnpobn8f2tutm4ck87dqee', 'e30:1nXL2y:TPhjwb10kyPHYKuGTr-mP73dFsV0KS7K247FZpngM4o', '2022-04-07 10:50:28.151599'),
 ('hrt9o3vbzszlfa5ej3c0rfszbfj4b1tk', 'e30:1nXL1g:tq83ZBzzps0wQLqmCj9MsA6JwUMnIZE080PUpUyfwOM', '2022-04-07 10:49:08.343030'),
+('kl5ohf2wih6zuzaly6i6uoem6mgsyr67', '.eJxVjEEOwiAQRe_C2pAKDAWX7nsGMsNMpWpoUtqV8e7apAvd_vfef6mE21rS1mRJE6uLsur0uxHmh9Qd8B3rbdZ5rusykd4VfdCmh5nleT3cv4OCrXzrKOQMusjkIwp3wVg4jxZCsNxbEDHsKULMORukOPYSkJCt9z5A50C9P_DJOBw:1nbcMZ:JBWbaXDeVUBPjIGCha_WVsbfRAd6RVA4U_geVBglqlA', '2022-04-19 06:08:23.090874'),
 ('s8w3tfzr9em02kdueq27jv5mlkzvonk7', 'e30:1nXLE4:TNU_gl3aQZJRInP7FqBfwlxMstVSevaMWjeJELSTWAY', '2022-04-07 11:01:56.031110'),
 ('vtfvpgo2j0zdq7h8kkkiu0ycd18oobcg', 'e30:1nXL8l:6GKIl9y_jb_sVsT-152i1xFd9ayK_fYnPyRRQDqv7A8', '2022-04-07 10:56:27.777440');
 
